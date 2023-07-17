@@ -69,15 +69,38 @@ class ViewController: UITableViewController {
     func submit(_ answer: String) {
         let lowerAnswer = answer.lowercased() // lowercase, avoid problem with uppercase
         
+        let errorTitle: String
+        let errorMessage: String
+        
         if isPossible(word: lowerAnswer) {
-            if isReal(word: lowerAnswer) {
+            if isOriginal(word: lowerAnswer) {
+                if isReal(word: lowerAnswer) {
                 usedWords.insert(answer, at: 0) // at the top of tableView
                 
                 let indexPath = IndexPath(row: 0, section: 0)
                 tableView.insertRows(at: [indexPath], with: .automatic) // slide new row in from the top
+                
+                return
+            } else {
+                errorTitle = "Word not recogniced"
+                errorMessage = "You cannot just make it up"
             }
+        } else {
+            errorTitle = "Word already used"
+            errorMessage = "Be more original"
         }
+    } else {
+        guard let title = title else { return } // in case we do not have title or don not want o force unwrap it
+        errorTitle = "Word doesn`t exist"
+        errorMessage = "You cannot spell that word from \(title.lowercased())"
     }
+    
+    let ac = UIAlertController(title: errorTitle, message: errorMessage, preferredStyle: .alert)
+    ac.addAction(UIAlertAction(title: "OK", style: .default))
+    present(ac,animated: true)
+}
+    
+    
     
     func isPossible(word: String) -> Bool {
         
