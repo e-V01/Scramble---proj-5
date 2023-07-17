@@ -32,7 +32,7 @@ class ViewController: UITableViewController {
         startGame()
     }
     
-
+    
     func startGame() {
         title = allWords.randomElement() // set view controller inside it in random
         usedWords.removeAll(keepingCapacity: true) // removes all values from used words
@@ -67,7 +67,44 @@ class ViewController: UITableViewController {
     }
     
     func submit(_ answer: String) {
+        let lowerAnswer = answer.lowercased() // lowercase, avoid problem with uppercase
+        
+        if isPossible(word: lowerAnswer) {
+            if isReal(word: lowerAnswer) {
+                usedWords.insert(answer, at: 0) // at the top of tableView
+                
+                let indexPath = IndexPath(row: 0, section: 0)
+                tableView.insertRows(at: [indexPath], with: .automatic) // slide new row in from the top
+            }
+        }
+    }
+    
+    func isPossible(word: String) -> Bool {
+        
+        guard var tempWord = title?.lowercased() else { return false }
+        
+        for letter in word {
+            if let position = tempWord.firstIndex(of: letter) {
+                tempWord.remove(at: position)
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+    
+    func isOriginal(word: String) -> Bool {
+        return !usedWords.contains(word)
+    }
+    
+    
+    func isReal(word: String) -> Bool {
+        let checker = UITextChecker()
+        let range = NSRange(location: 0, length: word.utf16.count)
+        let misspelledRange = checker.rangeOfMisspelledWord(in: word, range: range, startingAt: 0, wrap: false, language: "EN")
+        // we care about in, range and language;  startingAT and wrap parameter aren`t imporatnt
+        return misspelledRange.location == NSNotFound
+        // shows us where the misspelling was found,  no way to nil it
         
     }
 }
-
