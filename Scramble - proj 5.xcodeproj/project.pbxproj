@@ -13,6 +13,7 @@
 		9E0FAFA32A6578C40070FE1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0FAFA12A6578C40070FE1F /* Main.storyboard */; };
 		9E0FAFA52A6578C50070FE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E0FAFA42A6578C50070FE1F /* Assets.xcassets */; };
 		9E0FAFA82A6578C50070FE1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E0FAFA62A6578C50070FE1F /* LaunchScreen.storyboard */; };
+		9E0FAFB02A6579F90070FE1F /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9E0FAFAF2A6579F90070FE1F /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9E0FAFA42A6578C50070FE1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E0FAFA72A6578C50070FE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E0FAFA92A6578C50070FE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9E0FAFAF2A6579F90070FE1F /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				9E0FAFA12A6578C40070FE1F /* Main.storyboard */,
 				9E0FAFA42A6578C50070FE1F /* Assets.xcassets */,
 				9E0FAFA62A6578C50070FE1F /* LaunchScreen.storyboard */,
+				9E0FAFAF2A6579F90070FE1F /* start.txt */,
 				9E0FAFA92A6578C50070FE1F /* Info.plist */,
 			);
 			path = "Scramble - proj 5";
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E0FAFA82A6578C50070FE1F /* LaunchScreen.storyboard in Resources */,
+				9E0FAFB02A6579F90070FE1F /* start.txt in Resources */,
 				9E0FAFA52A6578C50070FE1F /* Assets.xcassets in Resources */,
 				9E0FAFA32A6578C40070FE1F /* Main.storyboard in Resources */,
 			);
